@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include intakeq_webhook_integration *.css
+recursive-include intakeq_webhook_integration *.csv
+recursive-include intakeq_webhook_integration *.html
+recursive-include intakeq_webhook_integration *.ico
+recursive-include intakeq_webhook_integration *.js
+recursive-include intakeq_webhook_integration *.json
+recursive-include intakeq_webhook_integration *.md
+recursive-include intakeq_webhook_integration *.png
+recursive-include intakeq_webhook_integration *.py
+recursive-include intakeq_webhook_integration *.svg
+recursive-include intakeq_webhook_integration *.txt
+recursive-exclude intakeq_webhook_integration *.pyc
