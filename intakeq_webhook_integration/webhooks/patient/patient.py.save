@@ -1,5 +1,3 @@
-
-
 import frappe
 import requests
 import json
@@ -25,17 +23,14 @@ id_mappings = {
 	'pwbs-15': 'member_id_policy',
 	'pwbs-3': 'group_number',
 	'1jp4-1': 'front_of_insurance_card',
-	'1zry-1': 'back_of_insurance_card',
-	'33a76-1': 'intakeq_medication',
-	'55d79-1': 'allergies'
+	
 }
 
 @frappe.whitelist(allow_guest=True)
 def add_patient():
-	#kargs = json.loads(frappe.request.data)
-	#intake_id = kargs.get('IntakeId')
-	#print(intake_id)
-	url = 'https://intakeq.com/api/v1/intakes/a6aa6684-cdd5-4525-8a1c-4a1da286fc54'
+	kargs = json.loads(frappe.request.data)
+	intake_id = kargs.get('IntakeId')
+	url = 'https://intakeq.com/api/v1/intakes/%s'%(intake_id)
 
 	response = requests.get(url, headers={'X-Auth-Key': '5c009fc3e581c640f291ffb944434a3647539858'})
 	try:
